@@ -1,0 +1,10 @@
+POST http://localhost:5109/users
+Content-Type: application/json
+
+{
+    "Name": "Gustav"
+}
+
+###
+
+GET http://localhost:5109/users/hello

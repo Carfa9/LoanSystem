@@ -1,0 +1,45 @@
+POST http://localhost:5109/api/users
+Content-Type: application/json
+
+{
+    "Name": "Gustav"
+}
+
+###
+
+GET http://localhost:5109/api/users
+
+###
+
+POST http://localhost:5109/api/items?availableOnly=true
+Content-Type: application/json
+
+{
+    "Name": "Skruvmejsel",
+    "Description": "En mycket bra skruvmejsel. Platt.",
+    "OwnerId": 2
+}
+
+###
+
+GET http://localhost:5109/api/items
+
+###
+
+POST http://localhost:5109/api/items/borrow
+Content-Type: application/json
+
+{
+    "ItemId": 1,
+    "BorrowerId": 2
+}
+
+###
+
+POST http://localhost:5109/api/items/return
+Content-Type: application/json
+
+{
+    "ItemId": 1,
+    "BorrowerId": 2
+}

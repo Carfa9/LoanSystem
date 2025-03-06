@@ -1,3 +1,6 @@
-dotnet new xunit -o WebAPI.IntegrationTests
-dotnet add package microsoft.aspnetcore.mvc.testing
-add ref to webapi in integrationtests
+- mkdir tests
+- cd tests
+- dotnet new xunit -o WebAPI.IntegrationTests
+- cd WebAPI.IntegrationTests
+- dotnet add package microsoft.aspnetcore.mvc.testing
+- Via solution explorer lägg till reference till webapi i integrationtests

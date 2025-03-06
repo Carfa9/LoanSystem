@@ -1,4 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using WebAPI.Models;
+
+namespace WebAPI.Infrastructure;
 
 public class LoanDbContext : DbContext
 {

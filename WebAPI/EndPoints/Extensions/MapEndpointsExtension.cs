@@ -1,3 +1,5 @@
+namespace WebAPI.EndPoints;
+
 public static class MapEndpointsExtension
 {
     public static IApplicationBuilder MapEndpoints(

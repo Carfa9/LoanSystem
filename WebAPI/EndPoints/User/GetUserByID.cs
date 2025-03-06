@@ -1,11 +1,16 @@
+using WebAPI.Infrastructure;
+using WebAPI.Models;
+
+namespace WebAPI.EndPoints;
+
 public static class GetUserByID
 {
-    public record Response(User User);
+    public record Response(string Name);
 
     public class Endpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app) =>
-            app.MapPost("api/users/{id:int}", Handler);
+            app.MapGet("api/users/{id:int}", Handler);
 
         public static IResult Handler(int id, LoanDbContext db)
         {
@@ -16,7 +21,7 @@ public static class GetUserByID
                 return Results.NotFound();
             }
 
-            return Results.Ok(new Response(user));
+            return Results.Ok(new Response(user.Name));
         }
     }
 }

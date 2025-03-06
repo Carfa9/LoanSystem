@@ -1,6 +1,8 @@
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
+namespace WebAPI.EndPoints;
+
 public static class AddEndpointsExtension
 {
     public static IServiceCollection AddEndpoints(

@@ -1,3 +1,7 @@
+using WebAPI.Infrastructure;
+using WebAPI.Models;
+
+namespace WebAPI.EndPoints;
 
 public static class PostUser
 {

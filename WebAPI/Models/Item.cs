@@ -1,6 +1,8 @@
+namespace WebAPI.Models;
+
 public class Item
 {
-    public int Id { get; private set; }
+    public int Id { get; protected set; }
     public string Name { get; set; } = "";
     public string Description { get; set; } = "";
     public User Owner { get; private set; } = null!;

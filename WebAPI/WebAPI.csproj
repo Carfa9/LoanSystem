@@ -15,4 +15,8 @@
     <PackageReference Include="microsoft.entityframeworkcore.sqlite" Version="9.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="WebAPI.IntegrationsTests" />
+  </ItemGroup>
+
 </Project>

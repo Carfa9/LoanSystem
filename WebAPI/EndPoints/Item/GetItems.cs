@@ -1,4 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using WebAPI.Infrastructure;
+
+namespace WebAPI.EndPoints;
 
 public static class GetItems
 {

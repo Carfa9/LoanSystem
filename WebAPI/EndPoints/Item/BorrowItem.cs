@@ -1,3 +1,6 @@
+using WebAPI.Infrastructure;
+
+namespace WebAPI.EndPoints;
 
 public static class BorrowItem
 {

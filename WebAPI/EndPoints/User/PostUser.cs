@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using WebAPI.Infrastructure;
 using WebAPI.Models;
 
@@ -18,6 +19,7 @@ public static class PostUser
             var user = new User { Name = request.Name };
             db.Users.Add(user);
             await db.SaveChangesAsync();
+
 
             return Results.Created("api/users", new Response(user.Id, user.Name));
         }

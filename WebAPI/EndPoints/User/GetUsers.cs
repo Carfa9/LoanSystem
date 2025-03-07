@@ -5,8 +5,6 @@ namespace WebAPI.EndPoints;
 
 public static class GetUsers
 {
-    public record Response(int Id, string Name);
-
     public class Endpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app) =>
@@ -19,7 +17,7 @@ public static class GetUsers
                             await db.Users.ToListAsync() :
                             await db.Users.Where(u => u.Name.Contains(name)).ToListAsync();
 
-            return Results.Ok(result.Select(u => new Response(u.Id, u.Name)));
+            return Results.Ok(result.Select(u => new { u.Id, u.Name }));
         }
     }
 }

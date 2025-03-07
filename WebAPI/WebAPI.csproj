@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="WebAPI.IntegrationsTests" />
+    <InternalsVisibleTo Include="WebAPI.IntegrationTests" />
   </ItemGroup>
 
 </Project>

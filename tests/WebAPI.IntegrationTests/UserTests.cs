@@ -51,14 +51,14 @@ public class UserTests : IClassFixture<WebAppFactoryFixture>
         Assert.Equal(404, (int)response.StatusCode);
     }
 
-    // [Fact]
-    // public async Task GetAllUsers_ReturnsAllUsers()
-    // {
-    //     var response = await _client.GetFromJsonAsync<List<UserResponse>>("api/users");
+    [Fact]
+    public async Task GetAllUsers_ReturnsAllUsers()
+    {
+        var response = await _client.GetFromJsonAsync<List<UserResponse>>("api/users");
 
-    //     Assert.NotNull(response);
-    //     Assert.True(response?.Count > 0);
-    // }
+        Assert.NotNull(response);
+        Assert.True(response?.Count > 0);
+    }
 
-    // public record UserResponse(int Id, string Name);
+    public record UserResponse(int Id, string Name);
 }

@@ -5,7 +5,7 @@ namespace WebAPI.EndPoints;
 
 public static class GetUserByID
 {
-    public record Response(string Name);
+    public record Response(int Id, string Name);
 
     public class Endpoint : IEndpoint
     {
@@ -21,7 +21,7 @@ public static class GetUserByID
                 return Results.NotFound();
             }
 
-            return Results.Ok(new Response(user.Name));
+            return Results.Ok(new Response(user.Id, user.Name));
         }
     }
 }

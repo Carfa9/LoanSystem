@@ -33,6 +33,7 @@ public class UserTests : IClassFixture<WebAppFactoryFixture>
         Assert.True(content?.Id > 0);
     }
 
+<<<<<<< HEAD
         [Fact]
     public async Task ShouldGetAllUsers()
     {
@@ -75,3 +76,37 @@ public class UserTests : IClassFixture<WebAppFactoryFixture>
 
     }
 }
+=======
+    [Fact]
+    public async Task GetUserById_ReturnsAUser()
+    {
+        int userId = 1;
+        //Skicka en HTTP Request till /api/users/1
+        var response = await _client.GetFromJsonAsync<GetUserByID.Response>($"api/users/{userId}");
+
+        //Kolla att svaret innehåller det vi förväntar oss
+        Assert.NotNull(response);
+        Assert.Equal(userId, response?.Id);
+        Assert.False(string.IsNullOrEmpty(response?.Name));
+    }
+
+    [Fact]
+    public async Task GetUserById_ReturnsNotFound()
+    {
+        var response = await _client.GetAsync("api/users/0");
+
+        Assert.Equal(404, (int)response.StatusCode);
+    }
+
+    [Fact]
+    public async Task GetAllUsers_ReturnsAllUsers()
+    {
+        var response = await _client.GetFromJsonAsync<List<UserResponse>>("api/users");
+
+        Assert.NotNull(response);
+        Assert.True(response?.Count > 0);
+    }
+
+    public record UserResponse(int Id, string Name);
+}
+>>>>>>> 1088924d5f2b2cee3e1b13e6ae4a97def60fba77

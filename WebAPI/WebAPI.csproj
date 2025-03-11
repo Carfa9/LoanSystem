@@ -18,7 +18,7 @@
 
 <!-- Om man vill att internal klasser ska vara nåbara internt -->
   <ItemGroup>
-    <InternalsVisibleTo Include="WebAPI.IntegrationsTests" />
+    <InternalsVisibleTo Include="WebAPI.IntegrationTests" />
   </ItemGroup>
 
 </Project>

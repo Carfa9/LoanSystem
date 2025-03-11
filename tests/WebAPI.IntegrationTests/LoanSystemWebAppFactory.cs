@@ -32,6 +32,11 @@ public class LoanSystemWebAppFactory : WebApplicationFactory<User>
             dbContext.Users.Add(user);
             dbContext.Users.Add(new User { Name = "Jane" });
             dbContext.Users.Add(new User { Name = "Bengt" });
+<<<<<<< HEAD
+=======
+            dbContext.Users.Add(new User { Name = "Ulla" });
+            dbContext.Users.Add(new User { Name = "Sinan" });
+>>>>>>> 1088924d5f2b2cee3e1b13e6ae4a97def60fba77
 
             dbContext.SaveChanges();
 

@@ -2,15 +2,24 @@ using WebAPI.EndPoints;
 using WebAPI.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
-var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<LoanDbContext>(options => options.UseSqlite("Data Source=database.db"));
-builder.Services.AddEndpoints(typeof(Program).Assembly);
+public class Program
+{
+    private static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
 
-var app = builder.Build();
+        builder.Services.AddDbContext<LoanDbContext>(options => options.UseSqlite("Data Source=database.db"));
+        builder.Services.AddEndpoints(typeof(Program).Assembly);
 
-app.MapGet("/", () => "Hello World!");
+        var app = builder.Build();
 
-app.MapEndpoints();
+        app.MapGet("/", () => "Hello World!");
 
-app.Run();
+        app.MapEndpoints();
+
+        app.Run();
+
+       
+    }
+}
